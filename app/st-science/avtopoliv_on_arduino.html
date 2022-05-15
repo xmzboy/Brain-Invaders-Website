@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+         <link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> 
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Brain Invaders Как сделать автономную станцию по уходу за растениями на Arduino?</title>
+        <meta name="description" content="coding">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       <meta property = "business:contact_data:country_name" content = "Russia">
+<meta property = "business:contact_data:locality" content = "St. Petersburg">
+<meta property = "business:contact_data:email" content = "vanichpz@gmail.com">
+<meta name = "twitter:creator" content = "Ivan Krit">
+<meta name = "twitter:title" content = "Brain Invaders">
+<meta name = "twitter:site" content = "Brain Invaders">
+<meta name = "twitter:description" content = "science news">
+<meta property = "profile:last_name" content = "Андрейчук">
+<meta property = "profile:first_name" content = "Иван">
+<meta property = "og:title" content = "Brain Invaders">
+<meta property = "og:description" content = "arduino">
+<meta property = "og:site_name" content = "Brain Invaders">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="../css/fontAwesome.css">
+        <link rel="stylesheet" href="../css/hero-slider.css">
+        <link rel="stylesheet" href="../css/owl-carousel.css">
+        <link rel="stylesheet" href="../css/lightbox.css">
+        <link rel="stylesheet" href="../state_style.css">
+        <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body>
+    <div id="zagolovok">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand scroll-top"><em>B</em>rain <em>I</em>nvaders</a>
+                </div>
+                <div id="main-nav" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="../index.html">Главная</a></li>
+                        <li><a href="../galer.html" >Галерея</a></li>
+                        <li><a href="../states.html">Статьи</a></li>
+                        <li><a href="https://vk.com/id76852272" >Автор</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+<h1>Как сделать автономную станцию по уходу за растениями на Arduino?</h1>
+        <br>
+</div>
+<div id="state_text">  
+<p> В <a href="arduino_st.html"><b>прошлой статье</b></a> мы рассказали вам что такое станция по уходу за растениями и как она работает. В этой статье мы хотим приложить инструкцию по сборке подобной станции.
+<b>Обратите внимание что данная статья лишь покажет что нужно и как собирать станцию, но код к ней придется писать самостоятельно.</b> Так что
+прежде чем приступать к программированию платы, необходимо изучить некоторый список литературы, чтобы понимать команды и функции, используемые на микроконтроллере.</p>
+<h2>Модули</h2>
+<p>Перед началом сборки составим список того что нам понадобится:
+   <li> 1. Микроконтроллер Arduino UNO;</li>
+   <li> 2. Arduino Shield с макетной платой;</li>
+    <li>3. I2C LCD экран;</li>
+   <li> 4. Ультразвуковой модуль;</li>
+   <li> 5. Датчик воды Water Sensor;</li>
+   <li> 6. Светодиод;</li>
+   <li> 7. Набор проводов;</li>
+   <li> 8. Модуль определения влажности почвы;</li>
+   <li> 9. Насос;</li>
+    <li>10. Набор трубок;</li>
+   <li> 11. Реле;</li>
+    <li>12. Светодиодная лента;</li>
+   <li> 13. Батарея крона;</li>
+    <li>14. Зажим для кроны;</li>
+    <li>15. RTC DS1302;</li>
+   <li> 16. Набор резисторов на 1 кОм;</li>
+   <li> 17. Фанера для изготовления корпуса;</li>
+    </p>
+        
+<h2>Сборка устройства</h2>
+<p>
+Согласно схеме, мы подключаем Arduino Shield к микроконтроллеру, а от него ведем провода к модулям. Лобзиком или другим инструментом выпиливаем корпус станции, можно сделать сразу с местом для емкости с водой. В нашей станции также сделаны две дверцы, одна для установки крон, вторая для доступа к микроконтроллеру. К слову можно выпилить такие же крепления к ультразвуковому модулю и LCD-экрану как представлено на фотографии. Также важно рассчитать место, ведь никому не нужно чтобы реле или другой модуль не влезли в корпус. Датчики влажности почвы и воды, а также сами шланги мы продеваем через специальное отверстие в штативе, на него же мы крепим светодиодную ленту для освещения наших растений.  </p>
+<h2>Создание программы</h2>
+<p>
+В общих чертах в данной программе следует учесть показания главного для станции автополива датчика – датчика влажности почвы. Показания с этого модуля должны считываться микроконтроллером и сравниваться с установленными значениями нормальной влажности почвы. Если почва будет слишком сухой, то включится реле подключенное к насосу, и тот будет перекачивать воду из ёмкости в цветок, пока влажность не станет нормальной. Также, одной из главных задач, является подключение “часов реального времени” и считывание значений с них. Когда время будет переходить за определенные отметки, включится реле, подсоединенное к светодиодным лентам, и загорится свет или наоборот выключится (ночью). Также в начальной версии у меня был добавлен LCD экран для наглядности работы программы.
+    </p>
+<h2>Модернизация устройства</h2> 
+<p>
+Для лучшения автономности устройства был добавлен датчик воды, который сигнализирует о нехватке воды в ёмкости включением красного светодиода. Также был подключен ультразвуковой модуль. Его программа заключалась в следующем: если в поле зрения модуля не попадает объект, то подсветка на экране выключена, если же вблизи кто-то находится, то она включается. Данное решение было принято для экономии энергии, чтобы экран не простаивал включенным, а загорался только при непосредственном появлении человека.
+</p>
+   <h2>Список подключений</h2>
+    <p>
+<li>Датчик влажности почвы</li>
+ GND  =>      GND
+ <br>VCC =>       5V
+ <br>OUT =>       A2
+<li>Реле 2</li>
+ GND  =>      GND
+ <br>VCC =>       5V
+ <br>IN2  =>      8
+<li>Реле </li>
+ GND  =>      GND
+ <br>VCC  =>      5V
+ <br>IN1  =>      7
+<li>Ультразвуковой модуль</li>
+ GND   =>     GND
+ <br>VCC   =>     5V
+ <br>TRIG   =>    10
+ <br>ECHO  =>     9
+<li>LCD I2C экран</li>
+ GND   =>     GND
+<br> VCC  =>      5V
+ <br>SCL   =>     A4
+ <br>SDA  =>      A5
+<li>RTC DS1302</li>
+ GND    =>    GND
+ <br>VCC   =>     5V
+ <br>RST   =>     3
+ <br>DAT   =>     2
+ <br>CLK   =>     4
+<li>Насос</li>
+ -    =>      9V
+ <br>+      =>    COM2
+<li>Светодиодная лента</li>
+ -       =>   9V
+ <br>+    =>      COM1
+<li>Светодиод</li>
+ +     =>     5
+ <br>-    =>      1 КОм GND
+</p>
+</div>
+<div id="state_photo">
+      <h3><b><a href="../science.html"><<НАУКА</a></b></h3>
+  <br>
+    <br>
+    <img src="../img/arduino/work.jpg" alt="фото не найдено">
+    <br><p>Датчик влажности почвы</p><br>
+    <img src="../img/arduino/lcd.jpg" alt="фото не найдено">
+    <br><p>Две светодиодные ленты дают отличное освещение, а меняющий за счёт крепежа свою высоту штатив подойдет по высоте практически для любого комнатного растения </p><br>
+    <img src="../img/arduino/station.jpg" alt="фото не найдено">
+    <br><p>При нормальной работе станции на экране появляется такая надпись</p><br>
+    <img src="../img/arduino/ultra.jpg" alt="фото не найдено">
+    <br><p>Ультразвуковой модуль на специальном креплении</p><br>
+    <img src="../img/arduino/shield.jpg" alt="фото не найдено">
+    <br><p>Для тех кто не понимает что такое Arduino Shield, вот он, специальный модуль который крепится непосредственно на саму плату</p><br>
+    <br><br><br><br><br><br><br><br>
+         
+</div>
+<footer>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <div class="logo">
+                        <a href="#" class="scroll-top"><em>B</em>rain <em>I</em>nvaders</a>
+                        <p>Copyright &copy; 2018 Invaders Software 
+                      <br> Design: <span>Ivan Krit/Invaders Software</span></p>
+                        
+
+                    </div>
+                </div>
+                
+
+                <div class="col-md-4 col-sm-12">
+                    <div class="location">
+                        <h4>Location</h4>
+                        <ul>
+                            <li>St. Petersburg</li>
+                            <li>Russia</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-12">
+                    <div class="contact-info">
+                        <h4>More Info</h4>
+                        <ul>
+                            <li><em>Phone</em>: +79045513292</li>
+                            <li><em>Email</em>: vanichpz@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-12">
+                    <div class="connect-us">
+                        <h4>Get Social with us</h4>
+                        <ul>
+                            <li><a href="https://vk.com/id76852272" target="_parent"><i class="fa fa-vk"></i></a></li>
+                            <li><a href="https://plus.google.com/u/0/107125973739517201794" target="_blank"><i class="fa fa-google"></i></a></li>
+                            <li><a href="https://www.instagram.com/ivan.us_/"><i class="fa fa-instagram"></i></a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div id="fid">
+        
+    </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="../js/vendor/bootstrap.min.js"></script>
+
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        // navigation click actions 
+        $('.scroll-link').on('click', function(event){
+            event.preventDefault();
+            var sectionID = $(this).attr("data-id");
+            scrollToID('#' + sectionID, 750);
+        });
+        // scroll to top action
+        $('.scroll-top').on('click', function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop:0}, 'slow');         
+        });
+        // mobile nav toggle
+        $('#nav-toggle').on('click', function (event) {
+            event.preventDefault();
+            $('#main-nav').toggleClass("open");
+        });
+    });
+    // scroll function
+    function scrollToID(id, speed){
+        var offSet = 50;
+        var targetOffset = $(id).offset().top - offSet;
+        var mainNav = $('#main-nav');
+        $('html,body').animate({scrollTop:targetOffset}, speed);
+        if (mainNav.hasClass("open")) {
+            mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+            mainNav.removeClass("open");
+        }
+    }
+    if (typeof console === "undefined") {
+        console = {
+            log: function() { }
+        };
+    }
+    </script>
+</body>
+</html>
