@@ -19,3 +19,25 @@ This website is written as an example for the design of a blog website
 Place the site on the server or just open it index.html in the browser, but it will lag
 
 # Structure
+
+Website have 8 folders:
+
+* 🎉 app - main folder, containing:
+	* All website's pages
+	* Favicon
+	* Other folders
+* 🎈 css - folder with styles, containing:
+	* All website's styles
+	* Bootstrap files
+	* Other static folders
+* 🏗 fonts - folder with fonts
+* 🖼 img - folder with images, containing:
+	* All images
+	* Icons
+	* Logo
+* 🎪 js - folder with scripts
+* 🎃 st-games - folder with articles about games
+* 🌲 st-nature - folder with articles about nature
+* 🚌 st-science- folder with articles about science
+
+# Overview
