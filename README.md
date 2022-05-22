@@ -44,3 +44,6 @@ Website have 8 folders:
 
 Main page with interactive button and adaptive menu:
 ![Index](https://github.com/xmzboy/Brain-Invaders-Website/raw/main/readme_images/index_1.png)
+
+Main page design with many interactive buttons:
+![Index](https://github.com/xmzboy/Brain-Invaders-Website/raw/main/readme_images/index_2.png)
