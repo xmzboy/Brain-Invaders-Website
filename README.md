@@ -35,15 +35,18 @@ Website have 8 folders:
 	* All images
 	* Icons
 	* Logo
-* 🎪 js - folder with scripts
+* 🎪 js - folder with script
 * 🎃 st-games - folder with articles about games
 * 🌲 st-nature - folder with articles about nature
 * 🚌 st-science- folder with articles about science
 
 # Overview
 
-Main page with interactive button and adaptive menu:
+* Main page with interactive button and adaptive menu:
+
 ![Index](https://github.com/xmzboy/Brain-Invaders-Website/raw/main/readme_images/index_1.png)
 
-Main page design with many interactive buttons:
+
+* Main page design with many interactive buttons:
+
 ![Index](https://github.com/xmzboy/Brain-Invaders-Website/raw/main/readme_images/index_2.png)
