@@ -35,7 +35,7 @@ Website have 8 folders:
 	* All images
 	* Icons
 	* Logo
-* 🎪 js - folder with script
+* 🎪 js - folder with scripts
 * 🎃 st-games - folder with articles about games
 * 🌲 st-nature - folder with articles about nature
 * 🚌 st-science- folder with articles about science
