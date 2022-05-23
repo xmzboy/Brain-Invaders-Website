@@ -51,6 +51,6 @@ Website have 8 folders:
 
 ![Index](https://github.com/xmzboy/Brain-Invaders-Website/raw/main/readme_images/index_2.png)
 
-* Home page with an interactive list of news with the time and author of the publication:
+* Footer with information and social buttons, and home page with an interactive list of news with the time and author of the publication:
 
 ![Index](https://github.com/xmzboy/Brain-Invaders-Website/raw/main/readme_images/index_3.png)
