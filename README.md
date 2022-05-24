@@ -54,3 +54,7 @@ Website have 8 folders:
 * Footer with information and social buttons, and home page with an interactive list of news with the time and author of the publication:
 
 ![Index](https://github.com/xmzboy/Brain-Invaders-Website/raw/main/readme_images/index_3.png)
+
+* This page contains sections of articles that can be accessed by clicking the appropriate button:
+
+![Articles](https://github.com/xmzboy/Brain-Invaders-Website/raw/main/readme_images/articles.png)
