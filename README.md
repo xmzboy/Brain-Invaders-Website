@@ -58,3 +58,7 @@ Website have 8 folders:
 * This page contains sections of articles that can be accessed by clicking the appropriate button:
 
 ![Articles](https://github.com/xmzboy/Brain-Invaders-Website/raw/main/readme_images/articles.png)
+
+* The page with the article, there is a menu and footer:
+
+![Article1](https://github.com/xmzboy/Brain-Invaders-Website/raw/main/readme_images/article_1.png)
