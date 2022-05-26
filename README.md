@@ -62,3 +62,7 @@ Website have 8 folders:
 * The page with the article, there is a menu and footer:
 
 ![Article1](https://github.com/xmzboy/Brain-Invaders-Website/raw/main/readme_images/article_1.png)
+
+* A block with a gallery in the article:
+
+![Article2](https://github.com/xmzboy/Brain-Invaders-Website/raw/main/readme_images/article_2.png)
