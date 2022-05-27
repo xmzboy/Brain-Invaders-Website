@@ -66,3 +66,7 @@ Website have 8 folders:
 * A block with a gallery in the article:
 
 ![Article2](https://github.com/xmzboy/Brain-Invaders-Website/raw/main/readme_images/article_2.png)
+
+* Viewing an image in the gallery:
+
+![Article3](https://github.com/xmzboy/Brain-Invaders-Website/raw/main/readme_images/article_3.png)
